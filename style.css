@@ -3,19 +3,40 @@ html{
 }
 .container{
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: 480px;
 }
 .container__jugador{
+    max-width: 940px;
     margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.box__juego{
+    display: block;
+    position: relative;
 }
 .tablero{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 940px;
 }
 .celda{
     cursor: pointer;
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     margin-bottom: 10px;
+    background-size: contain;
+}
+.winner__box{
+    border-radius: 10px;
+    width: 80%;
+    color: #fff;
+    text-align: center;
+    padding: 5rem 4rem;
+    box-sizing: border-box;
+    background-color: #6946a1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
 }

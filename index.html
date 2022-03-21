@@ -13,20 +13,27 @@
         <h2>Autor: Aldair Huamani Cusi</h2>
         <div class="container__jugador">
             <form class="container__box player">
-                <input class="player__input" id="usuario" type="text" placeholder="NickName">
+                <input id ="nickname" class="player__input" id="usuario" type="text" placeholder="NickName">
             </form>
-            <button onclick="play()" class="player__submit">Jugar</button>
+            <button id="saveNickname" onclick="play()" class="player__submit">Jugar</button>
         </div>
-        <div class="tablero">
-            <button id="0" class="celda"></button>
-            <button id="1" class="celda"></button>
-            <button id="2" class="celda"></button>
-            <button id="3" class="celda"></button>
-            <button id="4" class="celda"></button>
-            <button id="5" class="celda"></button>
-            <button id="6" class="celda"></button>
-            <button id="7" class="celda"></button>
-            <button id="8" class="celda"></button>
+        <div class="box__juego">
+            <div class="tablero">
+                <button id="0" class="celda"></button>
+                <button id="1" class="celda"></button>
+                <button id="2" class="celda"></button>
+                <button id="3" class="celda"></button>
+                <button id="4" class="celda"></button>
+                <button id="5" class="celda"></button>
+                <button id="6" class="celda"></button>
+                <button id="7" class="celda"></button>
+                <button id="8" class="celda"></button>
+            </div>
+            <div id="winner" class="winner__box">
+                <h3>Felicidades </h3>
+                <h3 id="playerWinner"></h3>
+                <p>Ganaste el juego</p>
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>

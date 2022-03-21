@@ -1,4 +1,4 @@
-const you = 'black';
+var you = 'black';
 const machine = 'red';
 let turno = 0;
 var tablero = [];
@@ -15,9 +15,24 @@ let winCases = [
 
 const celdas = document.querySelectorAll('button');
 
+const botonSave = document.getElementById("saveNickname");
+// botonSave.addEventListener("click", saveNickName, false);
 
+const inputNickname = document.getElementById("nickname");
+
+const saveNickName = () => {
+    alert("Nickname agregado");
+}
 
 const play = () =>{
+    const valor = inputNickname.value;
+    if(valor == '') { 
+      alert("Nickname vacio"); 
+      return false; 
+    }
+    localStorage.setItem("nickname", valor);
+    // alert(localStorage.getItem("nickname"))
+    you= localStorage.getItem("nickname").toString();
     tablero = Array.from(Array(9).keys());
     celdas.forEach(
         (item, index) => {
@@ -57,6 +72,8 @@ const gameOver = (winner) => {
     celdas.forEach(
         (item) => item.removeEventListener('click', handleClick, false)
     )
+    document.getElementById('playerWinner').innerText = winner.player
+    document.getElementById('winner').style.display = "block"
 }
 
 const freeCells = () => {
@@ -86,8 +103,9 @@ const handleClick = (e, index) => {
             }
         , 1000);
     }
+}
 
-    
-    //Renderizar imagen de ficha jugada
-    // celda.style.backgroundImage = turno % 2 ? "url('/img/ficha2.png')" : "url('/img/ficha2.png')";
+
+const setNickName = (name) => {
+    window.localStorage.setItem('name', {name});
 }
